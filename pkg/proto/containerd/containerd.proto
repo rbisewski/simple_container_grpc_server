@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+package containerd;
+
+option go_package = ".;containerd";
+ 
+message ContainerdRequest {
+    string command = 1;
+}
+ 
+message ContainerdResponse {
+    string confirmation = 1;
+}
+ 
+service ContainerdService {
+    rpc Containerd(ContainerdRequest) returns (ContainerdResponse) {}
+}
